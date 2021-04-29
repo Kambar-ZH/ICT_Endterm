@@ -1,0 +1,21 @@
+<<<<<<< HEAD
+C:\Users\User\source\repos\WinForms\WinForms\bin\Debug\WinForms.exe.config
+C:\Users\User\source\repos\WinForms\WinForms\bin\Debug\WinForms.exe
+C:\Users\User\source\repos\WinForms\WinForms\bin\Debug\WinForms.pdb
+C:\Users\User\source\repos\WinForms\WinForms\obj\Debug\WinForms.Form1.resources
+C:\Users\User\source\repos\WinForms\WinForms\obj\Debug\WinForms.csproj.GenerateResource.cache
+C:\Users\User\source\repos\WinForms\WinForms\obj\Debug\WinForms.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\WinForms\WinForms\obj\Debug\WinForms.exe
+C:\Users\User\source\repos\WinForms\WinForms\obj\Debug\WinForms.pdb
+C:\Users\User\source\repos\WinForms\WinForms\obj\Debug\WinForms.csprojAssemblyReference.cache
+=======
+C:\Users\админ\source\repos\WinForms\WinForms\obj\Debug\WinForms.csprojAssemblyReference.cache
+C:\Users\админ\source\repos\WinForms\WinForms\obj\Debug\WinForms.Form1.resources
+C:\Users\админ\source\repos\WinForms\WinForms\obj\Debug\WinForms.csproj.GenerateResource.cache
+C:\Users\админ\source\repos\WinForms\WinForms\obj\Debug\WinForms.csproj.CoreCompileInputs.cache
+C:\Users\админ\source\repos\WinForms\WinForms\bin\Debug\WinForms.exe.config
+C:\Users\админ\source\repos\WinForms\WinForms\bin\Debug\WinForms.exe
+C:\Users\админ\source\repos\WinForms\WinForms\bin\Debug\WinForms.pdb
+C:\Users\админ\source\repos\WinForms\WinForms\obj\Debug\WinForms.exe
+C:\Users\админ\source\repos\WinForms\WinForms\obj\Debug\WinForms.pdb
+>>>>>>> a5c073f9fef23fd2f9fddcc5f3b52027be21a0a1
