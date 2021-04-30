@@ -12,8 +12,10 @@ namespace Week12
             LoadContacts();
         }
 
-        BLL bll = default(BLL);
-        int currentPage = 0;
+        private BLL bll = default(BLL);
+        private int currentPage = 0;
+        private string searchFor = "name";
+        private bool toSort = false;
 
         private void LoadContacts()
         {
@@ -30,8 +32,8 @@ namespace Week12
         private void refresh()
         {
             string text = toolStripTextBox1.Text;
-            toolStripStatusLabel1.Text = bll.GetContactsInPage(currentPage, text).Count().ToString();
-            bindingSource1.DataSource = bll.GetContactsInPage(currentPage, text);
+            toolStripStatusLabel1.Text = bll.GetContactsInPage(currentPage, searchFor, text, toSort).Count().ToString();
+            bindingSource1.DataSource = bll.GetContactsInPage(currentPage, searchFor, text, toSort);
         }
 
         private void addClient(object sender, EventArgs e)
@@ -59,6 +61,7 @@ namespace Week12
 
         private void searchContacts(object sender, EventArgs e)
         {
+            currentPage = 0;
             refresh();
         }
 
@@ -82,7 +85,8 @@ namespace Week12
 
         private void nextPage(object sender, EventArgs e)
         {
-            currentPage = Math.Max(0, Math.Min(bll.GetContacts().Count / 10 * 10, currentPage + 10));
+            string text = toolStripTextBox1.Text;
+            currentPage = Math.Max(0, Math.Min(bll.GetContactsInPage(currentPage, searchFor, text, toSort).Count / 10 * 10, currentPage + 10));
             refresh();
         }
 
@@ -96,6 +100,20 @@ namespace Week12
             contact.Address = text.Cells[3].Value.ToString();
             ShowContactForm showContactForm = new ShowContactForm(contact);
             showContactForm.ShowDialog();
+        }
+
+        private void button_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            searchFor = button.Text;
+            refresh();
+        }
+
+        private void sort_Click(object sender, EventArgs e)
+        {
+            toSort = !toSort;
+            label3.Text = toSort.ToString();
+            refresh();
         }
     }
 }

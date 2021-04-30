@@ -8,13 +8,10 @@ namespace Week12
 {
     interface DataAccessLayer
     {
-        ContactDTO GetContactById(string id);
         string CreateContact(ContactDTO contact);
         bool DeleteContactById(string id);
         bool UpdateContact(ContactDTO contact);
-        List<ContactDTO> GetContactsByName(string name);
-        List<ContactDTO> GetAllContacts();
-        List<ContactDTO> GetAllContactsInPage(int offset, string name);
+        List<ContactDTO> GetAllContactsInPage(int offset, string property, string pattern, bool sort);
     }
     public abstract class BaseContact
     {
@@ -22,10 +19,7 @@ namespace Week12
         public string Phone { get; set; }
         public string Address { get; set; }
     }
-    public class CreateContactCommand : BaseContact
-    {
-
-    }
+    public class CreateContactCommand : BaseContact { }
     public class ContactDTO : BaseContact
     {
         public string Id { get; set; }
@@ -36,14 +30,6 @@ namespace Week12
         public BLL(DataAccessLayer dal)
         {
             this.dal = dal;
-        }
-        public ContactDTO GetContactById(string id)
-        {
-            return dal.GetContactById(id);
-        }
-        public List<ContactDTO> GetContactsByName(string name)
-        {
-            return dal.GetContactsByName(name);
         }
         public bool UpdateContact(ContactDTO contact)
         {
@@ -62,13 +48,9 @@ namespace Week12
         {
             return dal.DeleteContactById(id);
         }
-        public List<ContactDTO> GetContacts()
+        public List<ContactDTO> GetContactsInPage(int offset, string property, string pattern, bool sort)
         {
-            return dal.GetAllContacts();
-        }
-        public List<ContactDTO> GetContactsInPage(int offset, string name)
-        {
-            return dal.GetAllContactsInPage(offset, name);
+            return dal.GetAllContactsInPage(offset, property, pattern, sort);
         }
     }
 }

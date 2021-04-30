@@ -318,6 +318,7 @@ namespace Paint
             lastClickedButton.BackColor = Color.LightGray;
             lastClickedButton = (Button)sender;
             lastClickedButton.BackColor = Color.SpringGreen;
+            pen.Color = button10.BackColor;
             UnselectShapes();
         }
         private void penButton_Click(object sender, EventArgs e)
@@ -380,6 +381,15 @@ namespace Paint
         {
             curTool = Tool.Circle;
             Button_Click(sender);
+        }
+
+        private void eraserButton_Click(object sender, EventArgs e)
+        {
+            lastClickedButton.BackColor = Color.LightGray;
+            lastClickedButton = (Button)sender;
+            lastClickedButton.BackColor = Color.SpringGreen;
+            curTool = Tool.Pen;
+            pen.Color = Color.White;
         }
     }
 }

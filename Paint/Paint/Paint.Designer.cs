@@ -80,6 +80,7 @@ namespace Paint
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
@@ -379,7 +380,7 @@ namespace Paint
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button1.Location = new System.Drawing.Point(24, 74);
+            this.button1.Location = new System.Drawing.Point(23, 42);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 28);
             this.button1.TabIndex = 6;
@@ -390,7 +391,7 @@ namespace Paint
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button2.Location = new System.Drawing.Point(24, 108);
+            this.button2.Location = new System.Drawing.Point(23, 76);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(85, 28);
             this.button2.TabIndex = 7;
@@ -401,7 +402,7 @@ namespace Paint
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button3.Location = new System.Drawing.Point(24, 210);
+            this.button3.Location = new System.Drawing.Point(23, 178);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(85, 28);
             this.button3.TabIndex = 9;
@@ -412,7 +413,7 @@ namespace Paint
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button4.Location = new System.Drawing.Point(24, 176);
+            this.button4.Location = new System.Drawing.Point(23, 144);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(85, 28);
             this.button4.TabIndex = 8;
@@ -423,7 +424,7 @@ namespace Paint
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button5.Location = new System.Drawing.Point(24, 346);
+            this.button5.Location = new System.Drawing.Point(23, 314);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(85, 28);
             this.button5.TabIndex = 13;
@@ -434,7 +435,7 @@ namespace Paint
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button6.Location = new System.Drawing.Point(24, 312);
+            this.button6.Location = new System.Drawing.Point(23, 280);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(85, 28);
             this.button6.TabIndex = 12;
@@ -445,7 +446,7 @@ namespace Paint
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button7.Location = new System.Drawing.Point(24, 278);
+            this.button7.Location = new System.Drawing.Point(23, 246);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(85, 28);
             this.button7.TabIndex = 11;
@@ -456,7 +457,7 @@ namespace Paint
             // button8
             // 
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button8.Location = new System.Drawing.Point(24, 244);
+            this.button8.Location = new System.Drawing.Point(23, 212);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(85, 28);
             this.button8.TabIndex = 10;
@@ -467,7 +468,7 @@ namespace Paint
             // button9
             // 
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button9.Location = new System.Drawing.Point(24, 380);
+            this.button9.Location = new System.Drawing.Point(23, 348);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(85, 28);
             this.button9.TabIndex = 14;
@@ -497,7 +498,7 @@ namespace Paint
             // button12
             // 
             this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button12.Location = new System.Drawing.Point(24, 142);
+            this.button12.Location = new System.Drawing.Point(23, 110);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(85, 28);
             this.button12.TabIndex = 17;
@@ -505,11 +506,23 @@ namespace Paint
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.circleButton_Click);
             // 
+            // button13
+            // 
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button13.Location = new System.Drawing.Point(23, 382);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(85, 28);
+            this.button13.TabIndex = 18;
+            this.button13.Text = "Eraser";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.eraserButton_Click);
+            // 
             // Paint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button13);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
@@ -531,6 +544,7 @@ namespace Paint
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Paint";
             this.Text = "Paint";
+            this.Click += new System.EventHandler(this.eraserButton_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -592,5 +606,6 @@ namespace Paint
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button13;
     }
 }

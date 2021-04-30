@@ -67,28 +67,14 @@ namespace Week12
             return true;
         }
 
-        public ContactDTO GetContactById(string name) 
-        { 
-            return null;
-        }
-
-        public List<ContactDTO> GetContactsByName(string name)
+        public List<ContactDTO> GetAllContactsInPage(int offset, string property, string pattern, bool sort)
         {
-            string selectSQL = string.Format("SELECT * FROM contacts WHERE name LIKE '%{0}%'", name);
+            string sortBy = "NULL";
+            if (sort) sortBy = property;
+            string selectSQL = string.Format("SELECT * FROM contacts WHERE {0} LIKE '%{2}%' ORDER BY (SELECT {3}) LIMIT 10 OFFSET {1}", property, offset, pattern, sortBy);
             return GetContacts(selectSQL);
         }
 
-        public List<ContactDTO> GetAllContacts()
-        {
-            string selectSQL = @"SELECT * FROM contacts";
-            return GetContacts(selectSQL);
-        }
-
-        public List<ContactDTO> GetAllContactsInPage(int offset, string name)
-        {
-            string selectSQL = string.Format("SELECT * FROM contacts WHERE name LIKE '%{1}%' ORDER BY (SELECT NULL) LIMIT 10 OFFSET {0}", offset, name);
-            return GetContacts(selectSQL);
-        }
         public List<ContactDTO> GetContacts(string selectSQL)
         {
             List<ContactDTO> res = new List<ContactDTO>();
